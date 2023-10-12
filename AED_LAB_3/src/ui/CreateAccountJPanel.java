@@ -190,15 +190,34 @@ public class CreateAccountJPanel extends javax.swing.JPanel {
         String routingNumber = txtRoutingNumber.getText();
         String accountNumber = txtAccountNumber.getText();
         String bankName = txtBankName.getText();
-        int balance = Integer.parseInt(txtBalance.getText());
 
-        Account account = accountDirectory.addAccount();
+
+
+
+//        JOptionPane.showMessageDialog(null,"Account Created Successfully!");
+//        if("".equals(routingNumber) || "".equals(accountNumber) || "".equals(bankName)){
+//            JOptionPane.showMessageDialog(null, "Enter all the details");
+//        }
+        
+        if("".equals(routingNumber)){
+            JOptionPane.showMessageDialog(null, "Please enter routung number");
+        }
+        else if("".equals(accountNumber)){
+            JOptionPane.showMessageDialog(null, "Please enter account number");
+        }
+        else if("".equals(bankName)){
+            JOptionPane.showMessageDialog(null, "Please enter bank name");
+        } else if("".equals(txtBalance.getText())){
+            JOptionPane.showMessageDialog(null, "Please enter balance");
+        }
+        else{
+                    int balance = Integer.parseInt(txtBalance.getText());
+                    Account account = accountDirectory.addAccount();
         account.setRoutingNumber(routingNumber);
         account.setAccountNumber(accountNumber);
         account.setBankName(bankName);
         account.setBalance(balance);
-
-        JOptionPane.showMessageDialog(null,"Account Created Successfully!");
+        }
     }//GEN-LAST:event_brnCreateAccountActionPerformed
 
 

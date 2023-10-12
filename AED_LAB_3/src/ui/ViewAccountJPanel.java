@@ -182,14 +182,27 @@ public class ViewAccountJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
-        account.setRoutingNumber(txtRoutingNumber.getText());
+        
+        if("".equals(txtRoutingNumber.getText())){
+            JOptionPane.showMessageDialog(null,"Please enter routing number");
+        }
+        else if("".equals(txtAccountNumber.getText())){
+            JOptionPane.showMessageDialog(null,"Please enter account number");
+        }
+        else if("".equals(txtBankName.getText())){
+           JOptionPane.showMessageDialog(null,"Please enter bank name"); 
+        }
+        else{
+                  account.setRoutingNumber(txtRoutingNumber.getText());
         account.setAccountNumber(txtAccountNumber.getText());
         account.setBankName(txtBankName.getText());
 
         btnSave.setEnabled(false);
         btnUpdate.setEnabled(true);
 
-        JOptionPane.showMessageDialog(null,"Account Updated Successfully!");
+        JOptionPane.showMessageDialog(null,"Account Updated Successfully!");  
+        }
+
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
